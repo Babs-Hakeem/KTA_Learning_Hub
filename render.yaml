@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: kta-learning-hub-api
+    env: docker
+    plan: free
+    region: frankfurt
+    dockerfilePath: ./Dockerfile
+    autoDeploy: true
+    envVars:
+      - key: ASPNETCORE_ENVIRONMENT
+        value: Production
+      - key: ASPNETCORE_URLS
+        value: http://+:80
+      - key: ConnectionStrings__DefaultConnection
+        value: Host=ep-sweet-dawn-atttzozb.c-9.us-east-1.aws.neon.tech;Database=neondb;Username=neondb_owner;Password=npg_SV0KIWTB7sdC;SSL Mode=Require;Trust Server Certificate=true
+      - key: JwtSettings__SecretKey
+        value: KTALearningHubSuperSecretKey2026!!
+      - key: JwtSettings__Issuer
+        value: KTALearningHub
+      - key: JwtSettings__Audience
+        value: KTALearningHubUsers
