@@ -144,13 +144,8 @@ app.MapControllers();
 using (var scope = app.Services.CreateScope())
 {
     var context = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
-
-    if (app.Environment.IsDevelopment())
-    {
-        // Auto-migrate in development
-        await context.Database.MigrateAsync();
-        await DbInitializer.SeedAsync(context);
-    }
+    await context.Database.MigrateAsync();
+    await DbInitializer.SeedAsync(context);
 }
 
 app.Run();
