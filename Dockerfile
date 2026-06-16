@@ -10,21 +10,21 @@ WORKDIR /src
 
 # Copy csproj and restore
 COPY ["KTALearningHub.API.csproj", "./"]
-RUN dotnet restore "KTALearningHub.API.csproj"
+RUN dotnet restore "KTALEARNINGHUB.csproj"
 
 # Copy the rest of the project
 COPY . .
 WORKDIR "/src"
 
 # Build the project
-RUN dotnet build "KTALearningHub.API.csproj" -c Release -o /app/build
+RUN dotnet build "KTALEARNINGHUB.csproj" -c Release -o /app/build
 
 # Publish stage
 FROM build AS publish
-RUN dotnet publish "KTALearningHub.API.csproj" -c Release -o /app/publish /p:UseAppHost=false
+RUN dotnet publish "KTALEARNINGHUB.csproj" -c Release -o /app/publish /p:UseAppHost=false
 
 # Final image
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "KTALearningHub.API.dll"]
+ENTRYPOINT ["dotnet", "KTALEARNINGHUB.dll"]
