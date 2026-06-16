@@ -1,0 +1,115 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\HomePC\\source\\repos\\KtaLearningHub\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A2DF6BCB-D18F-C703-BE14-F976EF3FAA0B}|KTALearningHub.Api.csproj|c:\\users\\homepc\\source\\repos\\ktalearninghub\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2DF6BCB-D18F-C703-BE14-F976EF3FAA0B}|KTALearningHub.Api.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2DF6BCB-D18F-C703-BE14-F976EF3FAA0B}|KTALearningHub.Api.csproj|c:\\users\\homepc\\source\\repos\\ktalearninghub\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{A2DF6BCB-D18F-C703-BE14-F976EF3FAA0B}|KTALearningHub.Api.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2DF6BCB-D18F-C703-BE14-F976EF3FAA0B}|KTALearningHub.Api.csproj|c:\\users\\homepc\\source\\repos\\ktalearninghub\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{A2DF6BCB-D18F-C703-BE14-F976EF3FAA0B}|KTALearningHub.Api.csproj|solutionrelative:appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2DF6BCB-D18F-C703-BE14-F976EF3FAA0B}|KTALearningHub.Api.csproj|c:\\users\\homepc\\source\\repos\\ktalearninghub\\migrations\\20260615091758_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2DF6BCB-D18F-C703-BE14-F976EF3FAA0B}|KTALearningHub.Api.csproj|solutionrelative:migrations\\20260615091758_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2DF6BCB-D18F-C703-BE14-F976EF3FAA0B}|KTALearningHub.Api.csproj|c:\\users\\homepc\\source\\repos\\ktalearninghub\\ktalearninghub.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{A2DF6BCB-D18F-C703-BE14-F976EF3FAA0B}|KTALearningHub.Api.csproj|solutionrelative:ktalearninghub.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\HomePC\\source\\repos\\KtaLearningHub\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\HomePC\\source\\repos\\KtaLearningHub\\Program.cs*",
+              "RelativeToolTip": "Program.cs*",
+              "ViewState": "AgIAAIMAAAAAAAAAAAAAAIYAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-16T07:41:26.615Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "appsettings.Development.json",
+              "DocumentMoniker": "C:\\Users\\HomePC\\source\\repos\\KtaLearningHub\\appsettings.Development.json",
+              "RelativeDocumentMoniker": "appsettings.Development.json",
+              "ToolTip": "C:\\Users\\HomePC\\source\\repos\\KtaLearningHub\\appsettings.Development.json",
+              "RelativeToolTip": "appsettings.Development.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAB5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-06-15T09:23:47.067Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "20260615091758_InitialCreate.cs",
+              "DocumentMoniker": "C:\\Users\\HomePC\\source\\repos\\KtaLearningHub\\Migrations\\20260615091758_InitialCreate.cs",
+              "RelativeDocumentMoniker": "Migrations\\20260615091758_InitialCreate.cs",
+              "ToolTip": "C:\\Users\\HomePC\\source\\repos\\KtaLearningHub\\Migrations\\20260615091758_InitialCreate.cs",
+              "RelativeToolTip": "Migrations\\20260615091758_InitialCreate.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-15T09:18:00.544Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "KTALearningHub.Api.csproj",
+              "DocumentMoniker": "C:\\Users\\HomePC\\source\\repos\\KtaLearningHub\\KTALearningHub.Api.csproj",
+              "RelativeDocumentMoniker": "KTALearningHub.Api.csproj",
+              "ToolTip": "C:\\Users\\HomePC\\source\\repos\\KtaLearningHub\\KTALearningHub.Api.csproj",
+              "RelativeToolTip": "KTALearningHub.Api.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-06-15T07:36:40.272Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\HomePC\\source\\repos\\KtaLearningHub\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "C:\\Users\\HomePC\\source\\repos\\KtaLearningHub\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAB5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-06-15T07:26:14.704Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
