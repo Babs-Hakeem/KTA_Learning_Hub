@@ -182,10 +182,10 @@ C:\Users\HomePC\source\repos\KtaLearningHub\obj\Debug\net10.0\staticwebassets.bu
 C:\Users\HomePC\source\repos\KtaLearningHub\obj\Debug\net10.0\staticwebassets.development.json
 C:\Users\HomePC\source\repos\KtaLearningHub\obj\Debug\net10.0\staticwebassets.build.endpoints.json
 C:\Users\HomePC\source\repos\KtaLearningHub\obj\Debug\net10.0\swae.build.ex.cache
-C:\Users\HomePC\source\repos\KtaLearningHub\obj\Debug\net10.0\staticwebassets.upToDateCheck.txt
 C:\Users\HomePC\source\repos\KtaLearningHub\obj\Debug\net10.0\KTALearn.8B3C53D7.Up2Date
 C:\Users\HomePC\source\repos\KtaLearningHub\obj\Debug\net10.0\KTALearningHub.Api.dll
 C:\Users\HomePC\source\repos\KtaLearningHub\obj\Debug\net10.0\refint\KTALearningHub.Api.dll
 C:\Users\HomePC\source\repos\KtaLearningHub\obj\Debug\net10.0\KTALearningHub.Api.pdb
 C:\Users\HomePC\source\repos\KtaLearningHub\obj\Debug\net10.0\KTALearningHub.Api.genruntimeconfig.cache
 C:\Users\HomePC\source\repos\KtaLearningHub\obj\Debug\net10.0\ref\KTALearningHub.Api.dll
+C:\Users\HomePC\source\repos\KtaLearningHub\obj\Debug\net10.0\KTALearningHub.Api.sourcelink.json
