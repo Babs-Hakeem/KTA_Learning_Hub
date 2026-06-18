@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "Ht/Y8yzzozA=",
+  "dgSpecHash": "Rb4W6a5KfFQ=",
   "success": true,
   "projectFilePath": "C:\\Users\\HomePC\\source\\repos\\KtaLearningHub\\KTALearningHub.Api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\HomePC\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512",
+    "C:\\Users\\HomePC\\.nuget\\packages\\cloudinarydotnet\\1.29.2\\cloudinarydotnet.1.29.2.nupkg.sha512",
     "C:\\Users\\HomePC\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\HomePC\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\10.0.0\\microsoft.aspnetcore.authentication.jwtbearer.10.0.0.nupkg.sha512",
     "C:\\Users\\HomePC\\.nuget\\packages\\microsoft.build\\17.7.2\\microsoft.build.17.7.2.nupkg.sha512",
