@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("KTALearningHub.Api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9317f2503275be53ca7b20e5faade35abb2b48fe")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+50ece4fcf4d777eaabd2a4d27c22c6ff75a51642")]
 [assembly: System.Reflection.AssemblyProductAttribute("KTALearningHub.Api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("KTALearningHub.Api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
