@@ -7,7 +7,6 @@ namespace KTALearningHub.API.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
-[Authorize]
 public class FilesController : ControllerBase
 {
     private readonly IFileService _fileService;
@@ -17,7 +16,7 @@ public class FilesController : ControllerBase
         _fileService = fileService;
     }
 
-    /// <summary>Upload a video file</summary>
+    /// <summary>Upload a video file (admin only)</summary>
     [Authorize(Roles = "Admin")]
     [HttpPost("upload/video")]
     [RequestSizeLimit(500_000_000)] // 500MB
@@ -30,7 +29,7 @@ public class FilesController : ControllerBase
         return Ok(ApiResponse<FileUploadResponse>.Ok(result, "Video uploaded successfully."));
     }
 
-    /// <summary>Upload an audio file</summary>
+    /// <summary>Upload an audio file (admin only)</summary>
     [Authorize(Roles = "Admin")]
     [HttpPost("upload/audio")]
     [RequestSizeLimit(100_000_000)] // 100MB
@@ -43,7 +42,8 @@ public class FilesController : ControllerBase
         return Ok(ApiResponse<FileUploadResponse>.Ok(result, "Audio uploaded successfully."));
     }
 
-    /// <summary>Upload a document (assignment, resource, reflection)</summary>
+    /// <summary>Upload a document (assignment, resource, reflection) — students and admins</summary>
+    [Authorize]
     [HttpPost("upload/document")]
     [RequestSizeLimit(50_000_000)] // 50MB
     public async Task<IActionResult> UploadDocument(IFormFile file)
@@ -55,7 +55,8 @@ public class FilesController : ControllerBase
         return Ok(ApiResponse<FileUploadResponse>.Ok(result, "Document uploaded successfully."));
     }
 
-    /// <summary>Upload an image (thumbnails, profile pictures)</summary>
+    /// <summary>Upload an image (thumbnails, profile pictures) — students and admins</summary>
+    [Authorize]
     [HttpPost("upload/image")]
     [RequestSizeLimit(10_000_000)] // 10MB
     public async Task<IActionResult> UploadImage(IFormFile file)
@@ -65,5 +66,18 @@ public class FilesController : ControllerBase
 
         var result = await _fileService.UploadFileAsync(file, "images");
         return Ok(ApiResponse<FileUploadResponse>.Ok(result, "Image uploaded successfully."));
+    }
+
+    /// <summary>Upload a voice note / audio for reflections — students and admins</summary>
+    [Authorize]
+    [HttpPost("upload/voice")]
+    [RequestSizeLimit(50_000_000)] // 50MB
+    public async Task<IActionResult> UploadVoice(IFormFile file)
+    {
+        if (file == null || file.Length == 0)
+            return BadRequest(ApiResponse<string>.Fail("No file provided."));
+
+        var result = await _fileService.UploadFileAsync(file, "audio");
+        return Ok(ApiResponse<FileUploadResponse>.Ok(result, "Voice note uploaded successfully."));
     }
 }
