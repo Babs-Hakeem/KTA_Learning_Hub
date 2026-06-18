@@ -44,35 +44,80 @@ public class FileService : IFileService
             throw new InvalidOperationException($"File size exceeds the maximum allowed size of {maxSizeMB}MB.");
 
         await using var stream = file.OpenReadStream();
+        var folder = $"kta-learning-hub/{subFolder}";
+        var publicId = $"{Guid.NewGuid()}";
 
-        // Determine resource type based on folder
-        var resourceType = subFolder switch
+        // FIX: Use correct upload params based on file type
+        // Videos and Audio MUST use VideoUploadParams for streaming to work
+        if (subFolder == "videos" || subFolder == "audio")
         {
-            "videos" => ResourceType.Video,
-            "audio" => ResourceType.Video, // Cloudinary handles audio as video type
-            "images" => ResourceType.Image,
-            _ => ResourceType.Raw
-        };
+            var uploadParams = new VideoUploadParams
+            {
+                File = new FileDescription(file.FileName, stream),
+                Folder = folder,
+                PublicId = publicId,
+                Overwrite = false
+            };
 
-        var uploadParams = new RawUploadParams
+            var uploadResult = await _cloudinary.UploadAsync(uploadParams);
+
+            if (uploadResult.Error != null)
+                throw new InvalidOperationException($"Cloudinary upload failed: {uploadResult.Error.Message}");
+
+            return new FileUploadResponse
+            {
+                FileName = file.FileName,
+                FileUrl = uploadResult.SecureUrl?.ToString() ?? uploadResult.Url?.ToString() ?? string.Empty,
+                FileSize = file.Length
+            };
+        }
+
+        // Images MUST use ImageUploadParams
+        if (subFolder == "images")
         {
-            File = new FileDescription(file.FileName, stream),
-            Folder = $"kta-learning-hub/{subFolder}",
-            PublicId = $"{Guid.NewGuid()}",
-            Overwrite = false
-        };
+            var uploadParams = new ImageUploadParams
+            {
+                File = new FileDescription(file.FileName, stream),
+                Folder = folder,
+                PublicId = publicId,
+                Overwrite = false
+            };
 
-        var uploadResult = await _cloudinary.UploadAsync(uploadParams);
+            var uploadResult = await _cloudinary.UploadAsync(uploadParams);
 
-        if (uploadResult.Error != null)
-            throw new InvalidOperationException($"Cloudinary upload failed: {uploadResult.Error.Message}");
+            if (uploadResult.Error != null)
+                throw new InvalidOperationException($"Cloudinary upload failed: {uploadResult.Error.Message}");
 
-        return new FileUploadResponse
+            return new FileUploadResponse
+            {
+                FileName = file.FileName,
+                FileUrl = uploadResult.SecureUrl?.ToString() ?? uploadResult.Url?.ToString() ?? string.Empty,
+                FileSize = file.Length
+            };
+        }
+
+        // Documents and everything else use RawUploadParams
         {
-            FileName = file.FileName,
-            FileUrl = uploadResult.SecureUrl?.ToString() ?? uploadResult.Url?.ToString() ?? string.Empty,
-            FileSize = file.Length
-        };
+            var uploadParams = new RawUploadParams
+            {
+                File = new FileDescription(file.FileName, stream),
+                Folder = folder,
+                PublicId = publicId,
+                Overwrite = false
+            };
+
+            var uploadResult = await _cloudinary.UploadAsync(uploadParams);
+
+            if (uploadResult.Error != null)
+                throw new InvalidOperationException($"Cloudinary upload failed: {uploadResult.Error.Message}");
+
+            return new FileUploadResponse
+            {
+                FileName = file.FileName,
+                FileUrl = uploadResult.SecureUrl?.ToString() ?? uploadResult.Url?.ToString() ?? string.Empty,
+                FileSize = file.Length
+            };
+        }
     }
 
     private async Task<FileUploadResponse> UploadToLocalAsync(IFormFile file, string subFolder)
@@ -115,12 +160,27 @@ public class FileService : IFileService
             try
             {
                 // Extract public ID from URL
+                // Cloudinary URL format: https://res.cloudinary.com/cloudname/video/upload/v1234567890/folder/publicId.ext
                 var uri = new Uri(fileUrl);
-                var segments = uri.Segments;
-                if (segments.Length >= 2)
+                var pathSegments = uri.AbsolutePath.Split('/', StringSplitOptions.RemoveEmptyEntries);
+
+                // Find the upload segment index (usually after "upload" or "video/upload")
+                int uploadIndex = -1;
+                for (int i = 0; i < pathSegments.Length; i++)
                 {
-                    var publicId = string.Join("", segments.Skip(2)).TrimEnd('/');
-                    publicId = Path.ChangeExtension(publicId, null); // Remove extension
+                    if (pathSegments[i] == "upload" || pathSegments[i] == "v" + pathSegments[i].TrimStart('v'))
+                    {
+                        uploadIndex = i;
+                        break;
+                    }
+                }
+
+                // If we found upload segment, everything after is the public ID
+                if (uploadIndex >= 0 && uploadIndex + 1 < pathSegments.Length)
+                {
+                    var publicIdWithFolder = string.Join("/", pathSegments.Skip(uploadIndex + 1));
+                    var publicId = Path.ChangeExtension(publicIdWithFolder, null);
+
                     _cloudinary.DeleteResources(publicId);
                     return true;
                 }
